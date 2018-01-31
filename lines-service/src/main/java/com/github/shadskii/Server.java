@@ -22,6 +22,6 @@ public class Server implements CommandLineRunner
     @Override
     public void run(String... args) throws Exception
     {
-        initializer.loadLines(Paths.get("shakespeare.txt"));
+        initializer.loadLines(Paths.get(args[0]));
     }
 }
