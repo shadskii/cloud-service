@@ -27,7 +27,7 @@ public class LineController
     @ResponseBody
     public ResponseEntity<String> getLine(@PathVariable String num, Model model)
     {
-        Long lineNum = -1L;
+        Long lineNum;
         try
         {
             lineNum = Long.valueOf(num);
@@ -36,6 +36,7 @@ public class LineController
         {
             lineNum = -1L;
         }
+
         Line requestedLine = repository.findByPageNum(lineNum);
         if (Objects.nonNull(requestedLine))
         {
