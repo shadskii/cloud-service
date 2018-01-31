@@ -1,4 +1,4 @@
-package shadskii;
+package com.github.shadskii.data;
 
 import org.springframework.data.annotation.Id;
 

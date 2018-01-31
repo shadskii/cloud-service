@@ -1,4 +1,4 @@
-package shadskii;
+package com.github.shadskii;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

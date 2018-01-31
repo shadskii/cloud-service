@@ -2,9 +2,7 @@ group 'com.github.shadskii'
 version '1.0'
 
 apply plugin: 'java'
-allprojects {
-    apply plugin: "idea"
-}
+
 sourceCompatibility = 1.8
 
 repositories {

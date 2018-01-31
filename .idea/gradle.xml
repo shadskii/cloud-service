@@ -9,7 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/lines-data" />
             <option value="$PROJECT_DIR$/lines-gateway" />
+            <option value="$PROJECT_DIR$/lines-loader" />
             <option value="$PROJECT_DIR$/lines-service" />
           </set>
         </option>

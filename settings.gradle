@@ -1,4 +1,6 @@
 rootProject.name = 'cloud-service'
 include 'lines-service'
 include 'lines-gateway'
+include 'lines-loader'
+include 'lines-data'
 
