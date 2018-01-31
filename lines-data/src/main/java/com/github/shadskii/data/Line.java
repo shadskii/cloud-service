@@ -3,6 +3,9 @@ package com.github.shadskii.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Data object taht represents a line of a text file.
+ */
 @Document(collection = "lines")
 public class Line
 {
@@ -17,11 +20,21 @@ public class Line
         this.line = line;
     }
 
+    /**
+     * The line number of hte line
+     *
+     * @return A 0 indexed long representing the line number.
+     */
     public Long getPageNum()
     {
         return pageNum;
     }
 
+    /**
+     * The full text of the line.
+     *
+     * @return A String that contains all the characters from a line of a file omitting the end of line character.
+     */
     public String getLine()
     {
         return line;
