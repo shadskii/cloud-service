@@ -1,4 +1,4 @@
-package com.github.shadskii;
+package com.github.shadskii.loader;
 
 import com.github.shadskii.data.Line;
 import com.github.shadskii.data.LineRepository;
