@@ -1,6 +1,7 @@
 package com.github.shadskii;
 
 import com.github.shadskii.data.Line;
+import com.github.shadskii.data.LineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
