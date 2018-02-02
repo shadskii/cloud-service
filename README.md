@@ -50,3 +50,28 @@ choose each library or framework you used?
   * If you were to critique your code, what would you have to say about it?
 
 The remainder of the files in your tree should be the source-code for your system.
+
+## Design Decisions
+
+### Framework and Language Choice
+The main framework used to build the web server is Spring. Spring was chosen for a few reasons
+The first being performance; Spring Web is an established, high performance, testable library. Spring is used by many web developers
+which means that there are many resources available to learn from. Another reason was the knowledge that
+Java is one of the most frequently used languages at Circle. Creating an extensible web service was
+a goal for this project. An important part of extensibility is having the developers to extend it.
+
+### Microservice Architecture
+
+![alt text](https://cdn-1.wp.nginx.com/wp-content/uploads/2017/04/Palladino-conf2016-slide4_Monolithic-Architecture-0-47.png "Monolithic architecture")
+
+There are two main schools of thought in web application architecture: microservice architecture and monolithic architecture.
+They both offer some pros and cons over each other. Monolithic architecture 
+
+
+Microservice architecture imposes that large applications are built of a suite of modular services. 
+Each module of this application will support a specific business goal and use a simple well defined interface
+to communicate with other services. This architecture offers 
+
+This application uses microservice architecture to provide immense extensibility.
+Because there is only REST endpoint in this application it is not very obvious but as the size of this application grows
+it imposes no restriction on the choice in framework or language. 
