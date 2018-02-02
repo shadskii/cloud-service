@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
@@ -48,11 +47,8 @@ public class DbInitializer
         repository.deleteAll();
         try (Stream<String> stream = Files.lines(file))
         {
-            List<String> lines = stream.collect(Collectors.toList());
-            for (int i = 0; i < lines.size(); i++)
-            {
-                repository.save(new Line((long) i, lines.get(i)));
-            }
+            AtomicLong lineCount = new AtomicLong(0L);
+            stream.forEach(line -> repository.save(new Line(lineCount.getAndIncrement(), line)));
         }
         catch (IOException e)
         {
