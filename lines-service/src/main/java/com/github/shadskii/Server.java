@@ -1,11 +1,10 @@
 package com.github.shadskii;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Server implements CommandLineRunner
+public class Server
 {
 
     public static void main(String[] args)
@@ -16,9 +15,4 @@ public class Server implements CommandLineRunner
         SpringApplication.run(Server.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception
-    {
-
-    }
 }
