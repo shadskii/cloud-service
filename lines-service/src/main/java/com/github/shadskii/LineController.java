@@ -49,7 +49,7 @@ public class LineController
         }
         catch (NumberFormatException e)
         {
-            lineNum = -1L;
+            return doError();
         }
 
         Line requestedLine = repository.findByPageNum(lineNum);
