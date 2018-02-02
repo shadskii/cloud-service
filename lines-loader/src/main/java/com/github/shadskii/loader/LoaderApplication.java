@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.nio.file.Paths;
@@ -15,7 +15,8 @@ public class LoaderApplication implements CommandLineRunner
 {
     @Autowired
     private DbInitializer initializer;
-    private static ConfigurableApplicationContext ctx;
+    @Autowired
+    private ApplicationContext appContext;
 
     public static void main(String[] args)
     {
@@ -33,5 +34,6 @@ public class LoaderApplication implements CommandLineRunner
             throw new IllegalArgumentException("Please only specify one file");
         }
         initializer.loadLines(Paths.get(args[0]));
+        SpringApplication.exit(appContext);
     }
 }

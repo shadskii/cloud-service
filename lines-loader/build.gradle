@@ -23,7 +23,6 @@ repositories {
 dependencies {
     compile project(":lines-data")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-    compile('org.springframework.boot:spring-boot-starter-web')
     compile("org.springframework.boot:spring-boot-autoconfigure")
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
     testCompile 'org.mockito:mockito-core:2.13.0'
