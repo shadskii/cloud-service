@@ -40,16 +40,31 @@ public class Line
         return line;
     }
 
+    /**
+     * Set the Id of this line
+     *
+     * @param id A unique string ID
+     */
     public void setId(String id)
     {
         this.id = id;
     }
 
+    /**
+     * Sets the page number that this line represents
+     *
+     * @param pageNum A long greater than 0
+     */
     public void setPageNum(Long pageNum)
     {
         this.pageNum = pageNum;
     }
 
+    /**
+     * Sets the text associated with this line
+     *
+     * @param line The plain text of this line. Omitting the end of line character.
+     */
     public void setLine(String line)
     {
         this.line = line;
