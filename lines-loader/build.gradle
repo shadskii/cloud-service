@@ -23,5 +23,7 @@ repositories {
 dependencies {
     compile project(":lines-data")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-autoconfigure")
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
