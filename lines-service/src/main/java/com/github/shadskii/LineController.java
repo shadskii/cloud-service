@@ -13,10 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Objects;
 
+/**
+ * Controller for
+ */
 @Controller
 public class LineController
 {
     private final LineRepository repository;
+    private static final String ERROR_MSG = "The requested line is beyond the end of the file";
 
     @Autowired
     public LineController(LineRepository repository)
@@ -53,6 +57,6 @@ public class LineController
     private static ResponseEntity<String> doError()
     {
         return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
-                             .body("The requested line is beyond the end of the file");
+                             .body(ERROR_MSG);
     }
 }
