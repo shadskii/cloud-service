@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -43,5 +44,39 @@ public class LineControllerTest
 
         assertThat(result.getResponse()
                          .getContentAsString()).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGetLineOutOfRange() throws Exception
+    {
+        when(lineRepository.findByPageNum(anyLong())).thenReturn(null);
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/lines/1")
+                                                              .accept(MediaType.APPLICATION_JSON);
+        MvcResult result = mockMvc.perform(requestBuilder)
+                                  .andReturn();
+        String expected = "The requested line is beyond the end of the file";
+
+        assertThat(result.getResponse()
+                         .getContentAsString()).isEqualTo(expected);
+        assertThat(result.getResponse()
+                         .getStatus()).isEqualTo(HttpStatus.PAYLOAD_TOO_LARGE.value());
+    }
+
+    @Test
+    public void testGetLineIncorrectPageNum() throws Exception
+    {
+        when(lineRepository.findByPageNum(anyLong())).thenReturn(null);
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/lines/abc")
+                                                              .accept(MediaType.APPLICATION_JSON);
+        MvcResult result = mockMvc.perform(requestBuilder)
+                                  .andReturn();
+        String expected = "The requested line is beyond the end of the file";
+
+        assertThat(result.getResponse()
+                         .getContentAsString()).isEqualTo(expected);
+        assertThat(result.getResponse()
+                         .getStatus()).isEqualTo(HttpStatus.PAYLOAD_TOO_LARGE.value());
     }
 }
