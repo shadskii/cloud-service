@@ -40,23 +40,21 @@ public class LineController
     @ResponseBody
     public ResponseEntity<String> getLine(@PathVariable String num)
     {
-        Long lineNum;
         try
         {
-            lineNum = Long.valueOf(num);
+            Long lineNum = Long.valueOf(num);
+            Line requestedLine = repository.findByPageNum(lineNum);
+            if (Objects.nonNull(requestedLine))
+            {
+                return ResponseEntity.status(HttpStatus.OK)
+                                     .body(requestedLine
+                                             .getLine());
+            } else
+            {
+                return doError();
+            }
         }
         catch (NumberFormatException e)
-        {
-            return doError();
-        }
-
-        Line requestedLine = repository.findByPageNum(lineNum);
-        if (Objects.nonNull(requestedLine))
-        {
-            return ResponseEntity.status(HttpStatus.OK)
-                                 .body(requestedLine
-                                         .getLine());
-        } else
         {
             return doError();
         }
