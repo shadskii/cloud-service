@@ -26,12 +26,9 @@ public class LoaderApplication implements CommandLineRunner
     @Override
     public void run(String... args) throws Exception
     {
-        if (args.length < 1)
+        if (args.length != 1)
         {
-            throw new IllegalArgumentException("Please specify a file to load");
-        } else if (args.length > 1)
-        {
-            throw new IllegalArgumentException("Please only specify one file");
+            throw new IllegalArgumentException("Please specify exactly one source file");
         }
         initializer.loadLines(Paths.get(args[0]));
         SpringApplication.exit(appContext);
