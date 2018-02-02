@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Objects;
 
 /**
- * Controller for
+ * Controller for all REST endpoints that involve accessing lines.
  */
 @Controller
 public class LineController
@@ -28,6 +28,16 @@ public class LineController
         this.repository = repository;
     }
 
+    /**
+     * Get mapping for {@literal /lines/{num}} which provides a get request with the line number asked for. A response
+     * with the code {@link HttpStatus#OK} is returned along with the requested line. If the requested line number is
+     * outside the range of the file or is not a valid integer (i.e. contains non numeric characters) then a response
+     * with the code {@link HttpStatus#PAYLOAD_TOO_LARGE} is returned.
+     *
+     * @param num   - The line number requested by the client.
+     * @param model
+     * @return A response containing either the text of the requested Line or an error message.
+     */
     @GetMapping("/lines/{num}")
     @ResponseBody
     public ResponseEntity<String> getLine(@PathVariable String num, Model model)
