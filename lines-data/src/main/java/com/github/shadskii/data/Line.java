@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * Data object taht represents a line of a text file.
+ * Data object that represents a line of a text file.
  */
 @Document(collection = "lines")
 public class Line
