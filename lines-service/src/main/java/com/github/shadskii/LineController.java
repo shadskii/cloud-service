@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,13 +33,12 @@ public class LineController
      * outside the range of the file or is not a valid integer (i.e. contains non numeric characters) then a response
      * with the code {@link HttpStatus#PAYLOAD_TOO_LARGE} is returned.
      *
-     * @param num   - The line number requested by the client.
-     * @param model
+     * @param num The line number requested by the client.
      * @return A response containing either the text of the requested Line or an error message.
      */
     @GetMapping("/lines/{num}")
     @ResponseBody
-    public ResponseEntity<String> getLine(@PathVariable String num, Model model)
+    public ResponseEntity<String> getLine(@PathVariable String num)
     {
         Long lineNum;
         try
