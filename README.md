@@ -51,7 +51,11 @@ choose each library or framework you used?
 
 The remainder of the files in your tree should be the source-code for your system.
 
+## How To Use
+
 ## Design Decisions
+
+
 
 ### Framework and Language Choice
 The main framework used to build the web server is Spring. Spring was chosen for a few reasons
@@ -65,10 +69,11 @@ There are two main schools of thought in web application architecture: microserv
 They both offer some pros and cons over each other. Monolithic architecture 
 
 ##### Monolithic Architecture
-![alt text](https://cdn-1.wp.nginx.com/wp-content/uploads/2017/04/Palladino-conf2016-slide4_Monolithic-Architecture-0-47.png "Monolithic architecture")
+![alt text](https://cdn-images-1.medium.com/max/800/1*l1RlVVVBlSzhaNS8x5nOxw.png "Monolithic architecture")
 
 
 ##### Microservices Architecture
+![alt text](https://cdn-images-1.medium.com/max/800/1*-4JDjKBimQK6mnn4ney_QQ.png "Microservices architecture")
 
 Microservice architecture imposes that large applications are built of a suite of modular services. 
 Each module of this application will support a specific business goal and use a simple well defined interface
@@ -79,7 +84,7 @@ Because there is only REST endpoint in this application it is not very obvious b
 it imposes no restriction on the choice in framework or language. 
 
 #### Components
-##### Reverse Proxy/ Load Balancer
+##### Reverse Proxy/ Load Balancer 
 ##### Persistence Layer
 ##### Web Server
 ##### Database Initializer 
