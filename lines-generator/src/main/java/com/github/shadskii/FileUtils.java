@@ -1,24 +1,27 @@
 package com.github.shadskii;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
 public class FileUtils
 {
     public static void main(String[] args) throws IOException
     {
-        List<String> lines = new ArrayList<>();
-        for (int i = 0; i < 1000; i++)
+        generateTestFile("testFile_10_000.txt", 10_000);
+    }
+
+    public static void generateTestFile(String filePath, long numLines)
+    {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath))))
         {
-            lines.add(String.format("This line is line %d", i));
+            for (int i = 0; i < numLines; i++)
+            {
+                writer.write(String.format("This line is line %d %n", i));
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
         }
 
-        Path file = Paths.get("testFile_1000.txt");
-        Files.write(file, lines, Charset.forName("UTF-8"));
     }
 }
