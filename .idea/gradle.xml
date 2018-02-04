@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/lines-data" />
             <option value="$PROJECT_DIR$/lines-gateway" />
+            <option value="$PROJECT_DIR$/lines-generator" />
             <option value="$PROJECT_DIR$/lines-loader" />
             <option value="$PROJECT_DIR$/lines-service" />
           </set>

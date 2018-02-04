@@ -11,6 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-gateway.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-gateway.iml" group="lines-gateway" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-gateway/lines-gateway_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-gateway/lines-gateway_main.iml" group="lines-gateway" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-gateway/lines-gateway_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-gateway/lines-gateway_test.iml" group="lines-gateway" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-generator.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-generator.iml" group="lines-generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-generator/lines-generator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-generator/lines-generator_main.iml" group="lines-generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-generator/lines-generator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-generator/lines-generator_test.iml" group="lines-generator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-loader.iml" group="lines-loader" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-loader/lines-loader_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-loader/lines-loader_main.iml" group="lines-loader" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lines-loader/lines-loader_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lines-loader/lines-loader_test.iml" group="lines-loader" />

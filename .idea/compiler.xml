@@ -8,6 +8,8 @@
       <module name="lines-data_test" target="1.8" />
       <module name="lines-gateway_main" target="1.8" />
       <module name="lines-gateway_test" target="1.8" />
+      <module name="lines-generator_main" target="1.8" />
+      <module name="lines-generator_test" target="1.8" />
       <module name="lines-loader_main" target="1.8" />
       <module name="lines-loader_test" target="1.8" />
       <module name="lines-service_main" target="1.8" />
