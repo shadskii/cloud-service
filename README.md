@@ -85,7 +85,15 @@ it imposes no restriction on the choice in framework or language.
 
 #### Components
 ##### Reverse Proxy/ Load Balancer 
+Nginx and HAProxy were both considered as options for the reverse proxy and load balancer. Both offer similar performance under high 
+traffic which is supported by the benchmarks from .... However comparable their performance, many of Nginx's features
+are proprietary. At the free level Nginx does not offer enough features to justify choosing it over
+HAProxy. 
+
 ##### Persistence Layer
+MongoDB was chosen for persistent storage. Mongo is one of the most noSQL databases available. It is noted for its ability to 
+scale with large datasets. 
+
 ##### Web Server
 ##### Database Initializer 
 
