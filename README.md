@@ -65,8 +65,8 @@ Java is one of the most frequently used languages at Circle. Creating an extensi
 a goal for this project. An important part of extensibility is having the developers to extend it.
 
 ### Architecture
-There are two main schools of thought in web application architecture: microservice architecture and monolithic architecture.
-They both offer some pros and cons over each other. Monolithic architecture 
+Two of the main schools of thought in web application architecture are microservice architecture and monolithic architecture.
+They both offer some pros and cons over each other.
 
 ##### Monolithic Architecture
 ![alt text](https://cdn-images-1.medium.com/max/800/1*l1RlVVVBlSzhaNS8x5nOxw.png "Monolithic architecture")
