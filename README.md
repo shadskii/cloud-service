@@ -54,16 +54,6 @@ The remainder of the files in your tree should be the source-code for your syste
 ## How To Use
 
 ## Design Decisions
-
-
-
-### Framework and Language Choice
-The main framework used to build the web server is Spring. Spring was chosen for a few reasons
-The first being performance; Spring Web is an established, high performance, testable library. Spring is used by many web developers
-which means that there are many resources available to learn from. Another reason was the knowledge that
-Java is one of the most frequently used languages at Circle. Creating an extensible web service was
-a goal for this project. An important part of extensibility is having the developers to extend it.
-
 ### Architecture
 Two of the main schools of thought in web application architecture are microservice architecture and monolithic architecture.
 They both offer some pros and cons over each other.
@@ -84,19 +74,45 @@ Because there is only REST endpoint in this application it is not very obvious b
 it imposes no restriction on the choice in framework or language. 
 
 #### Components
-##### Reverse Proxy/ Load Balancer 
+##### Web Server
+##### Database Initializer 
+
+### Questions 
+##### How does your system work? (if not addressed in comments in source)
+
+  
+  
+##### What do we need to build your system?
+To build this system you will need to install HAProxy, MongoDB and gradle. 
+
+##### How will your system perform with a 1 GB file? a 10 GB file? a 100 GB file?
+This system should sufficiently handle any size file and is only limited by the disk space on the machine running it.
+Due to hardware limitations, this system has not been tested with files larger than 4 GB.
+
+##### How will your system perform with 100 users? 10000 users? 1000000 users?
+This system can handle any number of simultaneous users without a substantial degradation in performance. This however
+comes with the caveat that it is not able to dynamically scale. The system's ability to scale is based on the number of parallel
+instances created at startup. 
+
+##### What documentation, websites, papers, etc did you consult in doing this assignment?
+   * [Designing Scalable Backend Infrastructures From Scratch](https://medium.com/@helloansh/designing-scalable-backend-infrastructures-from-scratch-af80f5767ccc)
+#####  What third-party libraries or other tools does the system use? How did you choose each library or framework you used?
+###### Framework and Language Choice
+The main framework used to build the web server is Spring. Spring was chosen for a few reasons
+The first being performance; Spring Web is an established, high performance, testable library. Spring is used by many web developers
+which means that there are many resources available to learn from. Another reason was the knowledge that
+Java is one of the most frequently used languages at Circle. Creating an extensible web service was
+a goal for this project. An important part of extensibility is having the developers to extend it.
+###### Reverse Proxy/ Load Balancer 
 Nginx and HAProxy were both considered as options for the reverse proxy and load balancer. Both offer similar performance under high 
 traffic which is supported by the benchmarks from .... However comparable their performance, many of Nginx's features
 are proprietary. At the free level Nginx does not offer enough features to justify choosing it over
 HAProxy. 
-
-##### Persistence Layer
+###### Persistence Layer
 MongoDB was chosen for persistent storage. Mongo is one of the most noSQL databases available. It is noted for its ability to 
 scale with large datasets. 
 
-##### Web Server
-##### Database Initializer 
 
-### Dependencies
+###### How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
 
-### Referenced Resources
+###### If you were to critique your code, what would you have to say about it?
