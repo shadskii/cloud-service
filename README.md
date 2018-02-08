@@ -113,6 +113,12 @@ MongoDB was chosen for persistent storage. Mongo is one of the most noSQL databa
 scale with large datasets. 
 
 
-###### How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
+##### How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
+I spent approximately a week on this assignment. If I had more time on this I would have explored using AWS. AWS provides a 
+great number of services that could improve scalability. These include dynamic scaling and their API gateway. The web service
+itself should be sufficiently scalable so the highest priority in scaling is the load balancing. 
 
-###### If you were to critique your code, what would you have to say about it?
+##### If you were to critique your code, what would you have to say about it?
+Unit test coverage should be higher than it is. It was very difficult to achieve test coverage for LineRepository which 
+is an interface used by Spring to define the queries that can be made to MongoDB. Starting and MongoDB instance 
+for the test proved difficult. 
