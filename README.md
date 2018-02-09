@@ -74,13 +74,26 @@ Because there is only REST endpoint in this application it is not very obvious b
 it imposes no restriction on the choice in framework or language. 
 
 #### Components
-##### Web Server
-##### Database Initializer 
+
 
 ### Questions 
 ##### How does your system work? (if not addressed in comments in source)
+This system is comprised of four distinct components as described below.
 
-  
+###### Web Server
+The web server is written in Java using Spring Boot and it handles the logic of the REST endpoint. It queries the persistence
+layer for lines. 
+
+###### Database Initializer 
+The database initializer prepares the MongoDB instance by parsing a text file and inserting each line with an appropriate
+key.
+
+###### Database
+The database is an instance of MongoDB running on port 27017 by default.
+
+###### Load Balancer
+The load balancer is an instance of HAProxy that distributes traffic over all instances of the web server to ensure
+adequate distribution of load.
   
 ##### What do we need to build your system?
 To build this system you will need to install HAProxy, MongoDB and gradle. 
