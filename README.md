@@ -51,30 +51,6 @@ choose each library or framework you used?
 
 The remainder of the files in your tree should be the source-code for your system.
 
-## How To Use
-
-## Design Decisions
-### Architecture
-Two of the main schools of thought in web application architecture are microservice architecture and monolithic architecture.
-They both offer some pros and cons over each other.
-
-##### Monolithic Architecture
-![alt text](https://cdn-images-1.medium.com/max/800/1*l1RlVVVBlSzhaNS8x5nOxw.png "Monolithic architecture")
-
-
-##### Microservices Architecture
-![alt text](https://cdn-images-1.medium.com/max/800/1*-4JDjKBimQK6mnn4ney_QQ.png "Microservices architecture")
-
-Microservice architecture imposes that large applications are built of a suite of modular services. 
-Each module of this application will support a specific business goal and use a simple well defined interface
-to communicate with other services. This architecture offers 
-
-This application uses microservice architecture to provide immense extensibility.
-Because there is only REST endpoint in this application it is not very obvious but as the size of this application grows
-it imposes no restriction on the choice in framework or language. 
-
-#### Components
-
 
 ### Questions 
 ##### How does your system work? (if not addressed in comments in source)
@@ -82,7 +58,7 @@ This system is comprised of four distinct components as described below.
 
 ###### Web Server
 The web server is written in Java using Spring Boot and it handles the logic of the REST endpoint. It queries the persistence
-layer for lines. 
+layer for data.
 
 ###### Database Initializer 
 The database initializer prepares the MongoDB instance by parsing a text file and inserting each line with an appropriate
@@ -93,10 +69,14 @@ The database is an instance of MongoDB running on port 27017 by default.
 
 ###### Load Balancer
 The load balancer is an instance of HAProxy that distributes traffic over all instances of the web server to ensure
-adequate distribution of load.
+adequate distribution of load using a round robin load balancing algorithm.
   
 ##### What do we need to build your system?
-To build this system you will need to install HAProxy, MongoDB and gradle. 
+To build this system you will need to install:
+* HAProxy
+* MongoDB 
+* Gradle
+* Java
 
 ##### How will your system perform with a 1 GB file? a 10 GB file? a 100 GB file?
 This system should sufficiently handle any size file and is only limited by the disk space on the machine running it.
@@ -109,6 +89,11 @@ instances created at startup.
 
 ##### What documentation, websites, papers, etc did you consult in doing this assignment?
    * [Designing Scalable Backend Infrastructures From Scratch](https://medium.com/@helloansh/designing-scalable-backend-infrastructures-from-scratch-af80f5767ccc)
+   * [HaProxy vs Nginx](https://www.keycdn.com/support/haproxy-vs-nginx/)
+   * [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
+   * [Microservices & API Gateways, Part 1: Why an API Gateway?](https://www.nginx.com/blog/microservices-api-gateways-part-1-why-an-api-gateway/)
+   * [Scaling Django](https://djangobook.com/scaling-django/)
+   
 #####  What third-party libraries or other tools does the system use? How did you choose each library or framework you used?
 ###### Framework and Language Choice
 The main framework used to build the web server is Spring. Spring was chosen for a few reasons
@@ -118,7 +103,7 @@ Java is one of the most frequently used languages at Circle. Creating an extensi
 a goal for this project. An important part of extensibility is having the developers to extend it.
 ###### Reverse Proxy/ Load Balancer 
 Nginx and HAProxy were both considered as options for the reverse proxy and load balancer. Both offer similar performance under high 
-traffic which is supported by the benchmarks from .... However comparable their performance, many of Nginx's features
+traffic. However comparable their performance, many of Nginx's features
 are proprietary. At the free level Nginx does not offer enough features to justify choosing it over
 HAProxy. 
 ###### Persistence Layer
@@ -126,12 +111,15 @@ MongoDB was chosen for persistent storage. Mongo is one of the most noSQL databa
 scale with large datasets. 
 
 
+
 ##### How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
-I spent approximately a week on this assignment. If I had more time on this I would have explored using AWS. AWS provides a 
-great number of services that could improve scalability. These include dynamic scaling and their API gateway. The web service
-itself should be sufficiently scalable so the highest priority in scaling is the load balancing. 
+I spent approximately two weeks on this assignment, of those two weeks I would estimate that I spent 15-20 hours working on this.
+ If I had more time on this I would have explored using AWS. AWS provides a great number of services that could 
+ improve scalability. These include dynamic scaling and their API gateway. Another area I would have spent more time would 
+ have been scaling MongoDB. Out of the box Mongo is scalable but running parallel instances of it would yield a more scalable service.
+ The web service itself should be sufficiently scalable so the highest priority in scaling is the load balancing and persistence layer. 
 
 ##### If you were to critique your code, what would you have to say about it?
 Unit test coverage should be higher than it is. It was very difficult to achieve test coverage for LineRepository which 
-is an interface used by Spring to define the queries that can be made to MongoDB. Starting and MongoDB instance 
+is an interface used by Spring to define the queries that can be made to MongoDB. Starting and stopping the MongoDB instance 
 for the test proved difficult. 
